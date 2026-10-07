@@ -38,7 +38,15 @@ document.getElementById('addToWishlistButton').addEventListener('click', functio
 }, false);
 
 document.getElementById('addToCartButton').addEventListener('click', function() {
-  fbq('track', 'AddToCart');
+    fbq('init', '51802609583858', { external_id: 'customer_123' });
+
+    fbq('track', 'AddToCart', {
+        content_type: 'product',
+        currency: 'USD',
+        value: 139.99
+    }, {
+        eventID: 'test-006'
+    });
 }, false);
 
 document.getElementById('checkoutButton').addEventListener('click', function() {
